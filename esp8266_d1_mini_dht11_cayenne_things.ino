@@ -5,14 +5,13 @@
 
 //Constants
 #define CAYENNE_PRINT Serial
-#include <CayenneMQTTESP8266.h>
 #define DHTPIN D4         // * antes 14 what pin we're connected to
 #define DHTTYPE DHT11     // * DHT 11 
 DHT dht(DHTPIN, DHTTYPE);   // Initialize DHT sensor for normal 16mhz Arduino
 
 // replace with your channel thingspeak API key and your SSID and password
 String apiKey = "";  // * thingspeak API key
-const char* server = "api.thingspeak.com";  // *
+const char* server = "api.thingspeak.com";  
 // Existing WiFi network
 char ssid[] = "";    //* ssid
 char wifiPassword[] = ""; //* pass
@@ -31,20 +30,20 @@ void setup() {
   delay(10);  // *
   Cayenne.begin(username, password, clientID, ssid, wifiPassword);
   dht.begin();
-  WiFi.begin(ssid, wifiPassword); // *
+  WiFi.begin(ssid, wifiPassword); 
   Serial.println(); // * saca por pto serie
-  Serial.println(); // *
-  Serial.print("Connecting to "); // *
-  Serial.println(ssid);   // *
+  Serial.println(); 
+  Serial.print("Connecting to "); 
+  Serial.println(ssid);   
  
-  WiFi.begin(ssid, wifiPassword); // *
-  while (WiFi.status() != WL_CONNECTED)   // *
+  WiFi.begin(ssid, wifiPassword); 
+  while (WiFi.status() != WL_CONNECTED)   
   {
-    delay(500); // *
-    Serial.print(".");  // *
+    delay(500); 
+    Serial.print(".");  
   }
-  Serial.println(""); // *
-  Serial.println("WiFi connected"); // *
+  Serial.println(""); 
+  Serial.println("WiFi connected"); 
   pinMode(D0, WAKEUP_PULLUP);  // * Connect D0 to RST to wake up
 }
 
