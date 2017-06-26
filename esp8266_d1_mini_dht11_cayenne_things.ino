@@ -5,7 +5,7 @@
 
 //Constants
 #define CAYENNE_PRINT Serial
-#define DHTPIN D4         // * antes 14 what pin we're connected to
+#define DHTPIN D4         // pin we're connected to
 #define DHTTYPE DHT11     // * DHT 11 
 DHT dht(DHTPIN, DHTTYPE);   // Initialize DHT sensor for normal 16mhz Arduino
 
